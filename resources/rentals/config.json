@@ -1,0 +1,21 @@
+{
+	"type": "Collection",
+	"properties": {
+		"rented": {
+			"name": "rented",
+			"type": "boolean",
+			"typeLabel": "boolean",
+			"required": false,
+			"id": "rented",
+			"order": 0
+		},
+		"userRenting": {
+			"name": "userRenting",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "userRenting",
+			"order": 1
+		}
+	}
+}
