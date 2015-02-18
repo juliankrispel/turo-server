@@ -6,14 +6,21 @@ var repositoryCallback = function(res){
     };
 };
 
+var renderCallback = function(res){
+    return function(err, data){
+        res.render('document', { content: JSON.stringify(data) })
+    };
+};
+
+
 module.exports = function(app){
     app.route('/')
-    //.get(function(req, res){
-    //    res.json({b: 'default'});
-    //})
-    //Save new document
+    .get(function(req, res){
+        res.render('document', { content: '' });
+    })
     .post(function(req, res){
         //Only create if we have text
+        req.accepts('application/json');
         if(req.body.hasOwnProperty('text') && 
            req.body.text.length > 0){
             repository.create(
@@ -28,8 +35,16 @@ module.exports = function(app){
     });
 
     app.route('/:id')
+        .get(function(req, res){
+            req.accepts('html');
+            repository.get(
+                'document', 
+                req.params.id, 
+                renderCallback(res));
+        })
         // Get specific resource
         .get(function(req, res){
+            req.accepts('application/json');
             repository.get(
                 'document', 
                 req.params.id, 
@@ -43,6 +58,7 @@ module.exports = function(app){
                 repositoryCallback(res));
         })
         .put(function(req, res){
+            req.accepts('application/json');
             req.body.id = req.params.id;
             repository.update(
                 'document',

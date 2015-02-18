@@ -1,3 +1,4 @@
+var ejs = require('express-ejs-layouts');
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
@@ -6,6 +7,12 @@ var routes = require('./routes');
 var multer = require('multer');
 
 module.exports = function(port){
+    // view engine
+
+    app.set('views', __dirname + '/../node_modules/turo-desktop/public/templates');
+    app.set('view engine', 'ejs');
+    app.use(ejs);
+
     // for static files
     app.use(express.static(__dirname + '/../node_modules/turo-desktop/public'));
 
