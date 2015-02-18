@@ -8,10 +8,10 @@ var repositoryCallback = function(res){
 
 module.exports = function(app){
     app.route('/')
+    //.get(function(req, res){
+    //    res.json({b: 'default'});
+    //})
     //Save new document
-    .get(function(req, res){
-        res.json({b: 'default'});
-    })
     .post(function(req, res){
         //Only create if we have text
         if(req.body.hasOwnProperty('text') && 

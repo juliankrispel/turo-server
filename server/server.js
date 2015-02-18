@@ -1,10 +1,14 @@
-var app = require('express')();
+var express = require('express');
+var app = express();
 var bodyParser = require('body-parser');
 var repository = require('./repository');
 var routes = require('./routes');
 var multer = require('multer');
 
 module.exports = function(port){
+    // for static files
+    app.use(express.static(__dirname + '/../node_modules/turo-desktop/public'));
+
     // for parsing application/json
     app.use(bodyParser.json()); 
 

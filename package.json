@@ -14,6 +14,7 @@
     "mongodb": "^1.4.23",
     "mongoose": "^3.8.20",
     "mongoose-shortid": "^0.4.2",
+    "turo-desktop": "jhugman/turo-desktop#server",
     "multer": "^0.1.6",
     "request": "^2.49.0",
     "shortid": "^2.1.3"

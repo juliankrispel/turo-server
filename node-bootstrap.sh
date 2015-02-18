@@ -34,5 +34,5 @@ then
 
     # Run it
     cd /vagrant
-    node server.js
+    node server/server.js
 fi
