@@ -1,0 +1,4 @@
+[submodule "turo-desktop"]
+	path = turo-desktop
+	url = git@github.com:jhugman/turo-desktop.git
+	branch = server
