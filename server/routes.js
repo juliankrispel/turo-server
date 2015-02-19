@@ -16,7 +16,8 @@ var renderCallback = function(res){
 module.exports = function(app){
     app.route('/')
     .get(function(req, res){
-        res.render('document', { content: '' });
+        console.log('hello');
+        res.render('document', { layout: 'layout', content: '' });
     })
     .post(function(req, res){
         //Only create if we have text

@@ -10,7 +10,7 @@ var multer = require('multer');
 module.exports = function(port){
     // view engine
     app.engine('.html', ejs.__express);
-    app.set('views', path.join(__dirname, '../node_modules/turo-desktop/public/templates'));
+    app.set('views', path.join(__dirname, '../public/templates'));
     app.set('view engine', 'html');
     console.log(app.get('view engine'));
 

@@ -1,4 +1,0 @@
-[submodule "public"]
-	path = public
-	url = git@github.com:jhugman/turo-desktop.git
-	branch = server
