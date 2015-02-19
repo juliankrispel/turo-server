@@ -6,8 +6,14 @@ var documentSchema = mongoose.Schema({
     text: String
 });
 
+var userSchema = mongoose.Schema({
+    name: String,
+    token: String
+});
+
 var models = {
-    document: mongoose.model('Document', documentSchema)
+    document: mongoose.model('Document', documentSchema),
+    user: mongoose.model('User', documentSchema)
 };
 
 module.exports = models;
